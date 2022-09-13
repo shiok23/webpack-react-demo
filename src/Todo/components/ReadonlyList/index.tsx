@@ -1,0 +1,27 @@
+import React from 'react';
+import type { listType } from "../../index"
+
+type propsHelper = {
+  item: listType,
+  type?: string,
+  key: string,
+  deleteCallback: (index: string) => void,
+  checkCallback: (index: string, type?: string | undefined) => void
+}
+const ReadonlyList = (props: propsHelper): Element => {
+  const { item, deleteCallback, checkCallback, type }: propsHelper = props
+  const handleDelete = (id: string) => {
+    deleteCallback(id)
+  }
+  const handleCheck = (id: string) => {
+    checkCallback(id, type)
+  }
+  return <div key={item.id} >
+    <input checked={item.check} onChange={() => handleCheck(item.id)} type="checkbox"></input>
+    {item.title}
+    <button onClick={() => handleDelete(item.id)}>x</button>
+  </div >
+}
+
+export default ReadonlyList
+

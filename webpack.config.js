@@ -6,7 +6,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
- 
   entry: path.join(__dirname, 'src', 'app.tsx'),
   devServer: {
     hot: true,
@@ -30,7 +29,6 @@ module.exports = {
   ],
   module: {
     rules: [
-    
       {
         test: /\.tsx$/,
         loader: 'babel-loader',
