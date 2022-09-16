@@ -20,7 +20,7 @@ interface BaseSyntheticEvent<E = object, C = any, T = any> {
   timeStamp: number;
   type: string;
 }
-const Component: React.FC = (props: propsHelper): JSX.Element => {
+const Component: React.FC = (props: propsHelper): React.Element => {
   const { addCallback }: propsHelper = props
   const [value, setValue] = useState('')
   const handleAdd = () => {

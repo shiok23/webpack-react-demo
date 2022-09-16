@@ -13,7 +13,7 @@ export type listType = {
 
 type useListType = [list: Array<listType>, setList: (list: Array<listType>) => void]
 
-const Component: React.FC = (): JSX.Element => {
+const Component: React.FC = (): React.Element => {
   const [list, setList]: useListType = useState<listType>([])
   const handleAdd = (value: string) => {
     const oneList: listType = {
