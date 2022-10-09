@@ -4,10 +4,30 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "commit": " git add . && git cz ",
-    "push": "git add . && git cz && git push origin HEAD",
+    "commit": "git add . && git cz ",
     "dev": "npx webpack-dev-server",
-    "npm run prepare": "husky install"
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "eslint --ext .jsx .tsx .js,.ts ./src --fix",
+    "lint:style": "stylelint src/**/*.{scss,wxss} --fix",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,wxs}": [
+      "prettier --config .prettierrc.js --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{wxss,scss}": [
+      "prettier --config .prettierrc.js --write",
+      "stylelint --fix --allow-empty-input",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
@@ -30,12 +50,8 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    }
-  },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
     "antd": "^4.23.4",
     "awesome-only-resolves-last-promise": "^1.0.3",
     "commitlint-config-cz": "^0.13.3",

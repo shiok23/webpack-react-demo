@@ -18,11 +18,11 @@ module.exports = {
     },
     {
       value: 'style',
-      name: '格式:  代码格式修正（不影响功能，如：空格、缩进、分号等）',
+      name: '格式:  代码格式修正（不影响功能，如：空格、缩进、分号等）'
     },
     {
       value: 'refactor',
-      name: '重构:  代码重构（既不是新增功能，也不是修复Bug的代码变动）',
+      name: '重构:  代码重构（既不是新增功能，也不是修复Bug的代码变动）'
     },
     {
       value: 'perf',
@@ -34,17 +34,15 @@ module.exports = {
     },
     {
       value: 'build',
-      name:
-        '构建:  变更项目构建或外部依赖（如scopes: webpack、gulp、npm等）',
+      name: '构建:  变更项目构建或外部依赖（如scopes: webpack、gulp、npm等）'
     },
     {
       value: 'ci',
-      name:
-        '集成:  更改持续集成软件的配置文件和package中的scripts命令（如scopes: Travis, Circle等）',
+      name: '集成:  更改持续集成软件的配置文件和package中的scripts命令（如scopes: Travis, Circle等）'
     },
     {
       value: 'chore',
-      name: '工具:  变更构建流程或增加依赖库、辅助工具（如：构建、脚手架工具等）',
+      name: '工具:  变更构建流程或增加依赖库、辅助工具（如：构建、脚手架工具等）'
     },
     {
       value: 'revert',
@@ -61,7 +59,7 @@ module.exports = {
     {
       value: 'workflow',
       name: '工作流: 工作流相关文件修改'
-    },
+    }
   ],
 
   scopes: [
@@ -72,17 +70,13 @@ module.exports = {
     ['styles', '样式相关'],
     ['components', '功能组件相关'],
     ['constants', '常量相关'],
-    ['custom-nav-bar', '自定义header相关'],
-    ['custom-tab-bar', '自定义tabbar相关'],
     ['filters', '过滤器相关'],
     ['mappers', '匹配器相关'],
-    ['vant', '对 vant 的调整'],
     ['mixins', '全局可复用功能相关'],
     ['modules', '业务组件相关'],
     ['pages', '页面相关'],
     ['trackers', '埋点相关'],
     ['utils', 'utils 相关'],
-    ['app', '小程序主体部分相关'],
     ['hooks', 'hook 相关'],
     ['auth', '对 auth 修改'],
     ['other', '其他修改'],
@@ -102,7 +96,7 @@ module.exports = {
     body: '填写更加详细的变更描述（可选）。使用 "|" 换行：\n',
     breaking: '列举非兼容性重大的变更（可选）：\n',
     footer: '列举出所有变更的 ISSUES CLOSED（可选）。 例如: #31, #34：\n',
-    confirmCommit: '确认提交？',
+    confirmCommit: '确认提交？'
   },
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
