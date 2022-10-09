@@ -4,13 +4,18 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "commit": "git add . && git cz ",
+    "commit": "npm run changelog && git add . && git cz ",
     "dev": "npx webpack-dev-server",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint --ext .jsxm .tsx, .js, .ts ./src --fix",
     "lint:style": "stylelint src/**/*.{scss,wxss} --fix",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -69,10 +74,5 @@
     "scroxt": "^1.4.2",
     "style-loader": "^3.3.1",
     "webpack-dev-server": "^4.10.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
