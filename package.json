@@ -6,7 +6,8 @@
   "scripts": {
     "commit": " git add . && git cz ",
     "push": "git add . && git cz && git push origin HEAD",
-    "dev": "npx webpack-dev-server"
+    "dev": "npx webpack-dev-server",
+    "npm run prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
