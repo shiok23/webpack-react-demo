@@ -1,10 +1,10 @@
-const path = require("path")
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   entry: path.join(__dirname, 'src', 'app.tsx'),
   devServer: {
@@ -33,31 +33,39 @@ module.exports = {
         test: /\.tsx$/,
         loader: 'babel-loader',
         options: {
-          'presets': [["@babel/preset-react", {
-            "runtime": "automatic"
-          }],
-          '@babel/preset-typescript']
+          presets: [
+            [
+              '@babel/preset-react',
+              {
+                runtime: 'automatic'
+              }
+            ],
+            '@babel/preset-typescript'
+          ]
         }
       },
       {
         test: /\.jsx$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          "presets": [
-            ["@babel/preset-react", {
-              "runtime": "automatic"
-            }]
+          presets: [
+            [
+              '@babel/preset-react',
+              {
+                runtime: 'automatic'
+              }
+            ]
           ]
         }
       },
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: ['style-loader', 'css-loader', 'less-loader']
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader']
       }
-    ],
-  },
-};
+    ]
+  }
+}

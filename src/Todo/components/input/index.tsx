@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 type propsHelper = {
   addCallback: Function
 }
 interface BaseSyntheticEvent<E = object, C = any, T = any> {
-  nativeEvent: E;
-  currentTarget: C;
-  target: T;
-  bubbles: boolean;
-  keyCode?: number;
-  cancelable: boolean;
-  defaultPrevented: boolean;
-  eventPhase: number;
-  isTrusted: boolean;
-  preventDefault(): void;
-  isDefaultPrevented(): boolean;
-  stopPropagation(): void;
-  isPropagationStopped(): boolean;
-  persist(): void;
-  timeStamp: number;
-  type: string;
+  nativeEvent: E
+  currentTarget: C
+  target: T
+  bubbles: boolean
+  keyCode?: number
+  cancelable: boolean
+  defaultPrevented: boolean
+  eventPhase: number
+  isTrusted: boolean
+  preventDefault(): void
+  isDefaultPrevented(): boolean
+  stopPropagation(): void
+  isPropagationStopped(): boolean
+  persist(): void
+  timeStamp: number
+  type: string
 }
 const Component: React.FC = (props: propsHelper): React.Element => {
   const { addCallback }: propsHelper = props
@@ -30,10 +30,10 @@ const Component: React.FC = (props: propsHelper): React.Element => {
 
   const parentCb = (): void => {
     addCallback(value)
-    setValue("")
+    setValue('')
   }
   const handleKeyDown = (e: BaseSyntheticEvent) => {
-    if ((e.keyCode)! === 13) {
+    if (e.keyCode! === 13) {
       parentCb()
     }
   }
@@ -42,9 +42,12 @@ const Component: React.FC = (props: propsHelper): React.Element => {
     setValue(e.target.value)
   }
 
-  return < >
-    <input value={value} onChange={handleChange} onKeyDown={handleKeyDown} /> <button onClick={handleAdd}>添加</button>
-  </>
+  return (
+    <>
+      <input value={value} onChange={handleChange} onKeyDown={handleKeyDown} />{' '}
+      <button onClick={handleAdd}>添加</button>
+    </>
+  )
 }
 
 export default Component

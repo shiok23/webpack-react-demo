@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import Title from "./components/title"
-import List from "./components/List"
-import InputTodo from "./components/input"
-
+import React, { useState } from 'react'
+import Title from './components/title'
+import List from './components/List'
+import InputTodo from './components/input'
 
 export type listType = {
-  title: string,
-  del: Boolean,
-  check: Boolean,
+  title: string
+  del: Boolean
+  check: Boolean
   id: string
 }
 
-type useListType = [list: Array<listType>, setList: (list: Array<listType>) => void]
+type useListType = [
+  list: Array<listType>,
+  setList: (list: Array<listType>) => void
+]
 
 const Component: React.FC = (): React.Element => {
   const [list, setList]: useListType = useState<listType>([])
@@ -34,11 +36,17 @@ const Component: React.FC = (): React.Element => {
     list[index].check = type ? false : true
     setList([...list])
   }
-  return <div className="hello">
-    <Title></Title>
-    <InputTodo addCallback={handleAdd}></InputTodo>
-    <List checkCallback={handleCheck} deleteCallback={handleDelete} list={list}></List>
-  </div>
+  return (
+    <div className="hello">
+      <Title></Title>
+      <InputTodo addCallback={handleAdd}></InputTodo>
+      <List
+        checkCallback={handleCheck}
+        deleteCallback={handleDelete}
+        list={list}
+      ></List>
+    </div>
+  )
 }
 
 export default Component
