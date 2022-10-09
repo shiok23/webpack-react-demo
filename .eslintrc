@@ -9,15 +9,10 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "overrides": [
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.js", "*.jsx"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off"
       }
