@@ -94,23 +94,9 @@ module.exports = {
       name: `${value.padEnd(30)} (${description})`
     }
   }),
-
-  // it needs to match the value for field type. Eg.: 'fix'
-  /*
-  scopeOverrides: {
-    fix: [
-      {name: 'merge'},
-      {name: 'style'},
-      {name: 'e2eTest'},
-      {name: 'unitTest'}
-    ]
-  },
-  */
-  // override the messages, defaults are as follows
   messages: {
     type: '选择你要提交的类型：',
     scope: '选择影响的范围 (可选)：',
-    // used if allowCustomScopes is true
     customScope: '请输入自定义的 scope：',
     subject: '填写简短精炼的变更描述：\n',
     body: '填写更加详细的变更描述（可选）。使用 "|" 换行：\n',
@@ -118,11 +104,8 @@ module.exports = {
     footer: '列举出所有变更的 ISSUES CLOSED（可选）。 例如: #31, #34：\n',
     confirmCommit: '确认提交？',
   },
-
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
-
-  // limit subject length
   subjectLimit: 100,
 
   skipQuestions: ['body', 'footer']
