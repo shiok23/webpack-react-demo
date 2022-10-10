@@ -98,9 +98,6 @@ module.exports = {
     footer: '列举出所有变更的 ISSUES CLOSED（可选）。 例如: #31, #34：\n',
     confirmCommit: '确认提交？'
   },
-  allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
-  subjectLimit: 100,
-
   skipQuestions: ['body', 'footer']
 }
