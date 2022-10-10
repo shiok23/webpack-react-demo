@@ -8,7 +8,7 @@ type propsHelper = {
   deleteCallback: (index: string) => void
   checkCallback: (index: string, type?: string | undefined) => void
 }
-const ReadonlyList = (props: propsHelper): Element => {
+const ReadonlyList = (props: propsHelper): JSX.Element => {
   const { item, deleteCallback, checkCallback, type }: propsHelper = props
   const handleDelete = (id: string) => {
     deleteCallback(id)
@@ -19,7 +19,8 @@ const ReadonlyList = (props: propsHelper): Element => {
   return (
     <div key={item.id}>
       <input
-        checked={item.check}
+        checked={!!item.check}
+        placeholder="placeholder"
         onChange={() => handleCheck(item.id)}
         type="checkbox"
       ></input>

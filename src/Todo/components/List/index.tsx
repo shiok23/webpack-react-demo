@@ -8,7 +8,7 @@ type propsHelper = {
   checkCallback: (index: string, type?: string | undefined) => void
 }
 
-const Component = (props: propsHelper): Element => {
+const Component = (props: propsHelper): JSX.Element => {
   const { list, deleteCallback, checkCallback }: propsHelper = props
   const startList: Array<listType> = list.filter(item => item.check)
   const noStartList: Array<listType> = list.filter(item => !item.check)

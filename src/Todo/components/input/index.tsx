@@ -20,9 +20,9 @@ interface BaseSyntheticEvent<E = object, C = any, T = any> {
   timeStamp: number
   type: string
 }
-const Component: React.FC = (props: propsHelper): React.Element => {
-  const { addCallback }: propsHelper = props
-  const [value, setValue] = useState('')
+const Component = (props: propsHelper): JSX.Element => {
+  const { addCallback } = props
+  const [value, setValue] = useState<string>('')
   const handleAdd = () => {
     if (!value) return
     parentCb()
@@ -44,7 +44,12 @@ const Component: React.FC = (props: propsHelper): React.Element => {
 
   return (
     <>
-      <input value={value} onChange={handleChange} onKeyDown={handleKeyDown} />{' '}
+      <input
+        value={value}
+        placeholder="placeholder"
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+      />{' '}
       <button onClick={handleAdd}>添加</button>
     </>
   )

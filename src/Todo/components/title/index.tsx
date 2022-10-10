@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-const Component: React.FC = (): React.Element => {
+const Component: React.FC = (): JSX.Element => {
   return (
     <>
       <h1>Todo List</h1>
