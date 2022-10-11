@@ -1,7 +1,7 @@
 import React from 'react'
 import ResizeableTable from '../../components/Resizeable/index'
 
-const data = [
+const data: any = [
   {
     key: 0,
     date: '2018-02-11',
@@ -25,23 +25,16 @@ const data = [
   }
 ]
 
-const columns = [
+const columns: any = [
   {
     title: 'Date',
     dataIndex: 'date',
-    width: 200,
-    sorter: (a, b) => a.date.length - b.date.length,
-    sortDirections: ['descend']
+    width: 200
   },
   {
     title: 'Amount',
     dataIndex: 'amount',
-    width: 100,
-    sorter: (a, b) => {
-      console.log('Amount sort')
-      return a.amount - b.amount
-    },
-    sortDirections: ['descend']
+    width: 100
   },
   {
     title: 'Type',
@@ -52,15 +45,10 @@ const columns = [
     title: 'Note',
     dataIndex: 'note',
     width: 100
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    render: () => <a href="javascript:;">Delete</a>
   }
 ]
 
-const Component: React.FC = (): React.Element => {
+const Component: React.FC = (): JSX.Element => {
   return (
     <div>
       <h1> Antd Table</h1>
