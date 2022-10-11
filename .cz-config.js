@@ -1,7 +1,7 @@
 module.exports = {
   types: [
     {
-      value: 'stash',
+      value: 'feat',
       name: '未开发完成:  暂存'
     },
     {
