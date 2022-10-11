@@ -7,9 +7,17 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   entry: path.join(__dirname, 'src', 'app.tsx'),
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].[chunkhash].js',
+    publicPath: '/'
+  },
   devServer: {
     hot: true,
-    open: true
+    open: true,
+    historyApiFallback: {
+      disableDotRule: true
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -18,7 +26,7 @@ module.exports = {
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Webpack App</title>
+    <title>alan React webpack</title>
   </head>
   <body>
     <div id="app" />
