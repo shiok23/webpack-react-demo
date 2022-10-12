@@ -8,10 +8,10 @@ const Component: React.FunctionComponent = (): JSX.Element => {
     navigate(path)
   }
   return (
-    <div className="hello">
-      <h1>我是 home</h1>
+    <div className="home">
+      <h1>我是测试</h1>
       <Button onClick={() => goRouter('todo')}> Todo</Button>
-      <Button onClick={() => goRouter('antd-table')}> Antd-table</Button>
+      <Button onClick={() => goRouter('antd-table')}> Antd-table-test</Button>
       <Outlet />
     </div>
   )

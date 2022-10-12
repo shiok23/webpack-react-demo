@@ -11,6 +11,11 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
+  entry: path.join(__dirname, 'src', 'app.tsx'),
+  devServer: {
+    hot: true,
+    open: true
+  },
   // 并行压缩
   optimization: {
     minimize: true,
@@ -28,39 +33,21 @@ const config = {
   experiments: {
     lazyCompilation: true
   },
+  // cache: {
+  //   type: 'filesystem'
+  // },
   // 跳过无需编译的包
   module: {
     noParse: /lodash|react|antd/
   },
-  entry: path.join(__dirname, '../src', 'app.tsx'),
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[chunkhash].js',
-    publicPath: './'
-  },
-  // cache: {
-  //   type: 'filesystem'
-  // },
   plugins: [
-    // // 雪碧图
-    // new SpritesmithPlugin({
-    //   // 需要
-    //   src: {
-    //     cwd: path.resolve(__dirname, 'src/icons'),
-    //     glob: '*.png'
-    //   },
-    //   target: {
-    //     image: path.resolve(__dirname, 'src/assets/sprite.png'),
-    //     css: path.resolve(__dirname, 'src/assets/sprite.less')
-    //   }
-    // }),
     new HtmlWebpackPlugin({
       templateContent: `
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>alan React webpack</title>
+    <title>Webpack App</title>
   </head>
   <body>
     <div id="app" />
@@ -68,7 +55,6 @@ const config = {
 </html>
     `
     }),
-    // fork 出子进程，专门用于执行类型检查
     new ForkTsCheckerWebpackPlugin(),
     // eslint plugin
     new ESLintPlugin(),
@@ -189,5 +175,18 @@ const config = {
   }
 }
 
-// 注意，这里是用 `smp.wrap` 函数包裹住 Webpack 配置
-module.exports = smp.wrap(config)
+const envConfig = {
+  development: {
+    devtool: 'source-map'
+  },
+  production: {
+    devtool: 'eval'
+  }
+}
+
+module.exports = smp.wrap(function (e, v) {
+  return {
+    ...envConfig[v.mode],
+    ...config
+  }
+})

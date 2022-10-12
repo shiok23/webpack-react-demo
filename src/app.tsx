@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-import React from 'react'
 import { createRoot } from 'react-dom/client'
 import Router from './router'
 import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
