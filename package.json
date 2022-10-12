@@ -76,6 +76,7 @@
     "webpack-spritesmith": "^1.1.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "antd": "^4.23.4",
