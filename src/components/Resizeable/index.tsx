@@ -36,7 +36,7 @@ class ResizeableTitle extends React.Component {
 }
 
 class ResizeableTable extends React.PureComponent {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
 
     this.state = {

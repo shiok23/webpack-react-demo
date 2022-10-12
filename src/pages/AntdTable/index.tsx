@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react'
 import ResizeableTable from '../../components/Resizeable/index'
 
