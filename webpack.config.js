@@ -175,6 +175,7 @@ const config = {
   }
 }
 
+// 环境配置
 const envConfig = {
   development: {
     devtool: 'source-map'
