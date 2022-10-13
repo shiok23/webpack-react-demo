@@ -1,3 +1,4 @@
+import { Button, Input } from 'antd'
 import React, { useState } from 'react'
 type propsHelper = {
   addCallback: Function
@@ -44,13 +45,13 @@ const Component = (props: propsHelper): JSX.Element => {
 
   return (
     <>
-      <input
+      <Input
         value={value}
         placeholder="placeholder"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-      />{' '}
-      <button onClick={handleAdd}>添加</button>
+      />
+      <Button onClick={handleAdd}>添加</Button>
     </>
   )
 }

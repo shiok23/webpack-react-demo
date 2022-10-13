@@ -1,4 +1,4 @@
-import React from 'react'
+import { Button, Checkbox } from 'antd'
 import type { listType } from '../../index'
 
 type propsHelper = {
@@ -18,14 +18,13 @@ const ReadonlyList = (props: propsHelper): JSX.Element => {
   }
   return (
     <div key={item.id}>
-      <input
+      <Checkbox
         checked={!!item.check}
-        placeholder="placeholder"
         onChange={() => handleCheck(item.id)}
         type="checkbox"
-      ></input>
+      ></Checkbox>
       {item.title}
-      <button onClick={() => handleDelete(item.id)}>x</button>
+      <Button onClick={() => handleDelete(item.id)}>x</Button>
     </div>
   )
 }

@@ -1,15 +1,21 @@
 import { ConfigProvider, Layout, Menu } from 'antd'
 import Sider from 'antd/lib/layout/Sider'
 import React, { useEffect, useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 const { Header, Content } = Layout
 import { routerList } from './router'
 
 const Component: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate()
+  const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
+  const [currentPath, setCurrentPath] = useState<string>('/')
+  useEffect(() => {
+    setCurrentPath(location.pathname.slice(1, location.pathname.length))
+  }, [])
   const goRouter = (e: { key: string }): void => {
+    setCurrentPath(e.key)
     navigate(e.key)
   }
 
@@ -35,7 +41,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
             theme="light"
             onClick={goRouter}
             mode="inline"
-            defaultSelectedKeys={['/']}
+            selectedKeys={[currentPath]}
             items={routerList}
           />
         </Sider>
