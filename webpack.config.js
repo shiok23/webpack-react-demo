@@ -16,9 +16,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 
+const alias = {
+  '@': path.resolve(__dirname, 'src')
+}
+
 const config = {
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias
   },
   entry: path.join(__dirname, 'src', 'app.tsx'),
   devServer: {

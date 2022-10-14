@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react'
-import ResizeableTable from '../../components/Resizeable/index'
+import ResizeableTable from '@/components/Resizeable'
 
 const data: any = [
   {
