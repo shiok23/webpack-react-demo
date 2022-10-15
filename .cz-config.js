@@ -15,7 +15,8 @@ module.exports = {
     { name: 'webpack' },
     { name: 'router' },
     { name: 'pages' },
-    { name: 'components' }
+    { name: 'components' },
+    { name: 'hook' }
   ],
   // it needs to match the value for field type. Eg.: 'fix'
   /*  scopeOverrides: {
