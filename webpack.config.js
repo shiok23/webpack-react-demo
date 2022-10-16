@@ -206,9 +206,9 @@ const envConfig = {
   },
   production: {
     devtool: 'eval',
-    cache: {
-      type: 'filesystem'
-    },
+    // cache: {
+    //   type: 'filesystem'
+    // },
     optimization: {
       splitChunks: {
         // 设定引用次数超过 2 的模块才进行分包
