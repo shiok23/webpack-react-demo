@@ -2,6 +2,7 @@
 
 - ✨ 新增(hook): 增加常用 hooks ([a9dee90](https://github.com/2401345934/webpack-react-demo/commit/a9dee90))
 - ✨ 新增(package): 西 changelog 修复 ([c9429e3](https://github.com/2401345934/webpack-react-demo/commit/c9429e3))
+- ✨ 新增(request): 新增 request 请求 ([27f0b42](https://github.com/2401345934/webpack-react-demo/commit/27f0b42))
 - ✨ 新增(typescript): 工程化维护 ([3e96241](https://github.com/2401345934/webpack-react-demo/commit/3e96241))
 - ✨ 新增(typescript): 首页 router 纪录 path ([78251c2](https://github.com/2401345934/webpack-react-demo/commit/78251c2))
 - ✨ 新增(typescript): antd router 搭建 ([1c8ef42](https://github.com/2401345934/webpack-react-demo/commit/1c8ef42))

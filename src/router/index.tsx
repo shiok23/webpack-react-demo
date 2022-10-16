@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createHashRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import Home from '../index'
 import Todo from '../pages/Todo'
 import AntdTable from '../pages/AntdTable'
@@ -26,7 +26,7 @@ const initRouter = [
     element: <Home />
   }
 ]
-const router = createHashRouter(initRouter)
+const router = createBrowserRouter(initRouter)
 
 const routerList: any = initRouter[0].children?.map(item => {
   return {
