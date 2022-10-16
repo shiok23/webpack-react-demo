@@ -234,9 +234,9 @@ const envConfig = {
   }
 }
 
-module.exports = smp.wrap(function (e, v) {
+module.exports = function (e, v) {
   return {
-    ...envConfig[v.mode],
-    ...config
+    ...config,
+    ...envConfig[v.mode]
   }
-})
+}
