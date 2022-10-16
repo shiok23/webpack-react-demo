@@ -8,6 +8,7 @@
 - ✨ 新增(typescript): 工程化维护 ([3e96241](https://github.com/2401345934/webpack-react-demo/commit/3e96241))
 - ✨ 新增(typescript): 首页 router 纪录 path ([78251c2](https://github.com/2401345934/webpack-react-demo/commit/78251c2))
 - ✨ 新增(typescript): antd router 搭建 ([1c8ef42](https://github.com/2401345934/webpack-react-demo/commit/1c8ef42))
+- ✨ 新增(webpack): 修改 webpack 配置 ([adb1ab4](https://github.com/2401345934/webpack-react-demo/commit/adb1ab4))
 - ✨ 新增(webpack): 修改 webpack 配置 ([02fa295](https://github.com/2401345934/webpack-react-demo/commit/02fa295))
 - ✨ 新增(webpack): webpack 配置 ([e8f8b3e](https://github.com/2401345934/webpack-react-demo/commit/e8f8b3e))
 - 🔧 工具(webpack): 脚手架增加 path alias 配置 ([06964f0](https://github.com/2401345934/webpack-react-demo/commit/06964f0))
