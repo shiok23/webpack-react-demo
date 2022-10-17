@@ -8,7 +8,7 @@ import WarpComponent from './components/WarpComponent'
 
 const { Header } = Layout
 
-const Component: React.FunctionComponent = (props): JSX.Element => {
+const Component: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
