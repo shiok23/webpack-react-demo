@@ -1,23 +1,36 @@
 // @ts-nocheck
+import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Home from '../index'
-import Todo from '../pages/Todo'
-import AntdTable from '../pages/AntdTable'
-
+import Loading from '../components/Loading'
+const Home = React.lazy(() => import('../index'))
+const Todo = React.lazy(() => import('../pages/Todo'))
+const AntdTable = React.lazy(() => import('../pages/AntdTable'))
 const initRouter = [
   {
     path: '/',
-    element: <Home />,
+    element: (
+      <React.Suspense fallback={<Loading />}>
+        <Home />
+      </React.Suspense>
+    ),
     children: [
       {
         path: 'todo',
         label: '代办事项',
-        element: <Todo />
+        element: (
+          <React.Suspense fallback={<Loading />}>
+            <Todo />
+          </React.Suspense>
+        )
       },
       {
         path: 'antd-table',
         label: '表格',
-        element: <AntdTable />
+        element: (
+          <React.Suspense fallback={<Loading />}>
+            <AntdTable />
+          </React.Suspense>
+        )
       }
     ]
   },

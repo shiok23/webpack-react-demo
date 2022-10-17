@@ -6,7 +6,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 const { Header, Content } = Layout
 import { routerList } from './router'
 
-const Component: React.FunctionComponent = (): JSX.Element => {
+const Component: React.FunctionComponent = (props): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
