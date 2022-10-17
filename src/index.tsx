@@ -1,19 +1,25 @@
-import { ConfigProvider, Layout, Menu } from 'antd'
+import { ConfigProvider, Layout, Menu, PageHeader, Space } from 'antd'
 import Sider from 'antd/lib/layout/Sider'
 import React, { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
-const { Header, Content } = Layout
 import { routerList } from './router'
+import WarpComponent from './components/WarpComponent'
+
+const { Header } = Layout
 
 const Component: React.FunctionComponent = (props): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
   const [currentPath, setCurrentPath] = useState<string>('/')
+
+  // 处理刷新页面重定向 menu key
   useEffect(() => {
     setCurrentPath(location.pathname.slice(1, location.pathname.length))
   }, [])
+
+  // 路由跳转
   const goRouter = (e: { key: string }): void => {
     setCurrentPath(e.key)
     navigate(e.key)
@@ -47,31 +53,27 @@ const Component: React.FunctionComponent = (props): JSX.Element => {
         </Sider>
         <Layout className="site-layout">
           <Header className="site-layout-Header">
-            {React.createElement(
-              collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-              {
-                className: 'trigger',
-                onClick: () => setCollapsed(!collapsed)
-              }
-            )}
-            <div>
-              切换主题
-              <input
-                onChange={changeTheme}
-                type="color"
-                placeholder="placeholder"
-              />
-            </div>
+            <Space>
+              {React.createElement(
+                collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+                {
+                  className: 'trigger',
+                  onClick: () => setCollapsed(!collapsed)
+                }
+              )}
+              <div>
+                切换主题
+                <input
+                  onChange={changeTheme}
+                  type="color"
+                  placeholder="placeholder"
+                />
+              </div>
+            </Space>
           </Header>
-          <Content
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280
-            }}
-          >
+          <WarpComponent>
             <Outlet />
-          </Content>
+          </WarpComponent>
         </Layout>
       </div>
     </div>
