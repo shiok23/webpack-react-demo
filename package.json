@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "commit": "npm run changelog && git add . && git cz ",
+    "start": "npx webpack-dev-server --mode=development --progress",
     "dev": "npx webpack-dev-server --mode=development --progress",
     "qa": "npx webpack-dev-server --progress --mode=development",
     "prod": "npx webpack-dev-server --mode=production --progress",

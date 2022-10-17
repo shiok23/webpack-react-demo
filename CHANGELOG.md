@@ -15,6 +15,7 @@
 - ✨ 新增(webpack): publichpath ([8aba06c](https://github.com/2401345934/webpack-react-demo/commit/8aba06c))
 - ✨ 新增(webpack): webpack 配置 ([e8f8b3e](https://github.com/2401345934/webpack-react-demo/commit/e8f8b3e))
 - ✨ 新增(webpack): wepback 配置修改 ([0e5aebb](https://github.com/2401345934/webpack-react-demo/commit/0e5aebb))
+- 💄 格式(pages): delete use lesscode ([625ec4a](https://github.com/2401345934/webpack-react-demo/commit/625ec4a))
 - 🔧 工具(webpack): 脚手架增加 path alias 配置 ([06964f0](https://github.com/2401345934/webpack-react-demo/commit/06964f0))
 - 工程化 ([05e0f24](https://github.com/2401345934/webpack-react-demo/commit/05e0f24))
 - 工程化 ([0925441](https://github.com/2401345934/webpack-react-demo/commit/0925441))

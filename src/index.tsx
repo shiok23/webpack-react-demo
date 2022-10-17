@@ -1,12 +1,9 @@
-import { ConfigProvider, Layout, Menu, PageHeader, Space } from 'antd'
-import Sider from 'antd/lib/layout/Sider'
+import { ConfigProvider, Layout } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
-import { routerList } from './router'
 import WarpComponent from './components/WarpComponent'
-
-const { Header } = Layout
+import WarpMenu from './components/WarpMenu'
+import WarpHeader from './components/WarpHeader'
 
 const Component: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate()
@@ -26,51 +23,31 @@ const Component: React.FunctionComponent = (): JSX.Element => {
   }
 
   // 改变主题
-  const changeTheme = (event: any) => {
+  const changeTheme = (event: { target: { value: string } }) => {
     ConfigProvider.config({
       theme: {
         primaryColor: event.target.value
       }
     })
   }
+
   return (
     <div className="layout-warp">
       <div className="warp">
-        <Sider
-          className="layout-sider"
-          trigger={null}
-          collapsible
+        {/* menu */}
+        <WarpMenu
+          goRouter={goRouter}
+          currentPath={currentPath}
           collapsed={collapsed}
-        >
-          <div className="logo" />
-          <Menu
-            theme="light"
-            onClick={goRouter}
-            mode="inline"
-            selectedKeys={[currentPath]}
-            items={routerList}
-          />
-        </Sider>
+        ></WarpMenu>
         <Layout className="site-layout">
-          <Header className="site-layout-Header">
-            <Space>
-              {React.createElement(
-                collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                {
-                  className: 'trigger',
-                  onClick: () => setCollapsed(!collapsed)
-                }
-              )}
-              <div>
-                切换主题
-                <input
-                  onChange={changeTheme}
-                  type="color"
-                  placeholder="placeholder"
-                />
-              </div>
-            </Space>
-          </Header>
+          {/* headers */}
+          <WarpHeader
+            changeTheme={changeTheme}
+            setCollapsed={setCollapsed}
+            collapsed={collapsed}
+          ></WarpHeader>
+          {/* content */}
           <WarpComponent>
             <Outlet />
           </WarpComponent>
