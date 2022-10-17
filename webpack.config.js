@@ -15,9 +15,13 @@ const smp = new SpeedMeasurePlugin()
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // 性能分析
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
+// 压缩 html
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
+// 压缩
 const CompressionPlugin = require('compression-webpack-plugin')
+// build 前 清理 dist
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// 合并配置
 const { merge } = require('webpack-merge')
 
 const alias = {
@@ -35,10 +39,7 @@ const config = {
     filename: '[name]-[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
-  // 跳过无需编译的包
-  module: {
-    noParse: /lodash|react|antd/
-  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
