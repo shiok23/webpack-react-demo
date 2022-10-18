@@ -3,6 +3,7 @@
 - ✨ 新增(config): webpack 拆分 ([4ac9224](https://github.com/2401345934/webpack-react-demo/commit/4ac9224))
 - ✨ 新增(hook): 增加常用 hooks ([a9dee90](https://github.com/2401345934/webpack-react-demo/commit/a9dee90))
 - ✨ 新增(package): 西 changelog 修复 ([c9429e3](https://github.com/2401345934/webpack-react-demo/commit/c9429e3))
+- ✨ 新增(package): 新增 ahooks 依赖 ([919fbdf](https://github.com/2401345934/webpack-react-demo/commit/919fbdf))
 - ✨ 新增(package): 修改 build 命令 ([dcc4b90](https://github.com/2401345934/webpack-react-demo/commit/dcc4b90))
 - ✨ 新增(pages): 封装 warpComponent 组件 ([0d25a1f](https://github.com/2401345934/webpack-react-demo/commit/0d25a1f))
 - ✨ 新增(pages): 组件拆分细化 ([ad6a060](https://github.com/2401345934/webpack-react-demo/commit/ad6a060))
