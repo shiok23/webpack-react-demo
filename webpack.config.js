@@ -18,7 +18,7 @@ const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default
 // 压缩 html
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 // 压缩
-const CompressionPlugin = require('compression-webpack-plugin')
+// const CompressionPlugin = require('compression-webpack-plugin')
 // build 前 清理 dist
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // 合并配置

@@ -15,6 +15,7 @@ module.exports = {
     { name: 'webpack' },
     { name: 'router' },
     { name: 'pages' },
+    { name: 'tsconfig' },
     { name: 'components' },
     { name: 'package' },
     { name: 'request' },

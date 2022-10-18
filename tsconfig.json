@@ -2,15 +2,24 @@
 // 说明：所有的配置项都可以通过鼠标移入的方式，来查看配置项的解释说明
 // tsconfig 文档链接（https://www.typescriptlang.org/tsconfig）
 {
-  "paths": {
-    "@/*": ["src/*"]
-  },
-  "baseUrl": ".",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@": [
+        "/src"
+      ],
+    },
     // 编译选项
     "noImplicitThis": false, // 忽略 this 的类型检查, Raise error on this expressions with an implied any type.
     "target": "ESNext", // 生成代码的语言版本
-    "lib": ["dom", "dom.iterable", "esnext"], // 指定要包含在编译中的library
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // 指定要包含在编译中的library
     "allowJs": true, // 允许 ts 编译器编译 js 文件
     "skipLibCheck": true, // 跳过声明文件的类型检查
     "esModuleInterop": true, // es 模块互操作，屏蔽 ESModule和CommonJS之间的差异
@@ -32,7 +41,13 @@
     "react/prop-types": [
       1,
       {
-        "ignore": ["className", "children", "location", "params", "location*"]
+        "ignore": [
+          "className",
+          "children",
+          "location",
+          "params",
+          "location*"
+        ]
       }
     ],
     "no-param-reassign": [
@@ -54,5 +69,8 @@
       }
     ]
   },
-  "include": ["src", "src/utils"] // 指定允许 ts 处理的目录
+  "include": [
+    "src",
+    "src/utils"
+  ] // 指定允许 ts 处理的目录
 }

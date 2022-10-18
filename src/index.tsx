@@ -1,9 +1,9 @@
 import { ConfigProvider, Layout } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
-import WarpComponent from './components/WarpComponent'
-import WarpMenu from './components/WarpMenu'
-import WarpHeader from './components/WarpHeader'
+import WarpComponent from '@/components/WarpComponent'
+import WarpMenu from '@/components/WarpMenu'
+import WarpHeader from '@/components/WarpHeader'
 
 const Component: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate()

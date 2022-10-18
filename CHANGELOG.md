@@ -14,6 +14,7 @@
 - ✨ 新增(webpack): 修改 webpack 配置 ([adb1ab4](https://github.com/2401345934/webpack-react-demo/commit/adb1ab4))
 - ✨ 新增(webpack): 修改 webpack 配置 ([02fa295](https://github.com/2401345934/webpack-react-demo/commit/02fa295))
 - ✨ 新增(webpack): 修改 webpack ([3fa4649](https://github.com/2401345934/webpack-react-demo/commit/3fa4649))
+- ✨ 新增(webpack): 修改 webpack 增加多线程压缩 ([efab0eb](https://github.com/2401345934/webpack-react-demo/commit/efab0eb))
 - ✨ 新增(webpack): publichpath ([8aba06c](https://github.com/2401345934/webpack-react-demo/commit/8aba06c))
 - ✨ 新增(webpack): webpack 配置 ([e8f8b3e](https://github.com/2401345934/webpack-react-demo/commit/e8f8b3e))
 - ✨ 新增(webpack): wepback 配置修改 ([0e5aebb](https://github.com/2401345934/webpack-react-demo/commit/0e5aebb))
