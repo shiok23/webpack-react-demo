@@ -31,6 +31,7 @@ const alias = {
 const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    modules: [path.resolve(__dirname, 'node_modules')],
     alias
   },
   entry: path.join(__dirname, 'src', 'app.tsx'),
@@ -61,8 +62,8 @@ const config = {
     // eslint plugin
     new ESLintPlugin(),
     new MiniCssExtractPlugin({ filename: '[name]-[contenthash].css' }),
-    new StatoscopeWebpackPlugin(),
-    new CompressionPlugin()
+    new StatoscopeWebpackPlugin()
+    // new CompressionPlugin()
   ],
   module: {
     rules: [
@@ -103,40 +104,51 @@ const config = {
       },
       {
         test: /\.tsx$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        options: {
-          cacheDirectory: true,
-          presets: [
-            [
-              '@babel/preset-react',
-              {
-                runtime: 'automatic'
-              }
-            ],
-            '@babel/preset-typescript'
-          ]
-        }
+        use: [
+          'thread-loader',
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              presets: [
+                [
+                  '@babel/preset-react',
+                  {
+                    runtime: 'automatic'
+                  }
+                ],
+                '@babel/preset-typescript'
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.jsx$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        options: {
-          cacheDirectory: true,
-          presets: [
-            [
-              '@babel/preset-react',
-              {
-                runtime: 'automatic'
-              }
-            ]
-          ]
-        }
+        use: [
+          'thread-loader',
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              presets: [
+                [
+                  '@babel/preset-react',
+                  {
+                    runtime: 'automatic'
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.less$/,
         use: [
+          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
@@ -159,6 +171,7 @@ const config = {
       {
         test: /\.css$/,
         use: [
+          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
@@ -222,6 +235,8 @@ const envConfig = {
       lodash: '_',
       dayjs: 'dayjs'
     },
+    module: {},
+    module: {},
     optimization: {
       splitChunks: {
         chunks: 'async',
