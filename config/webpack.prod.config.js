@@ -12,7 +12,6 @@ module.exports = {
     dayjs: 'dayjs'
   },
   module: {},
-  module: {},
   optimization: {
     splitChunks: {
       chunks: 'async',
