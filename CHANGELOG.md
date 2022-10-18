@@ -1,5 +1,6 @@
 ## 1.0.0 (2022-10-18)
 
+- ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(config): webpack 拆分 ([4ac9224](https://github.com/2401345934/webpack-react-demo/commit/4ac9224))
 - ✨ 新增(hook): 增加常用 hooks ([a9dee90](https://github.com/2401345934/webpack-react-demo/commit/a9dee90))
 - ✨ 新增(package): 西 changelog 修复 ([c9429e3](https://github.com/2401345934/webpack-react-demo/commit/c9429e3))

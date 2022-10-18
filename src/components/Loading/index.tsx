@@ -1,8 +1,7 @@
-import { Fragment } from 'react'
 import './index.less'
 export default () => {
   return (
-    <Fragment>
+    <div className="loading-warp">
       <svg viewBox="-50 -50 100 100" width="200">
         <defs>
           <g id="spinner">
@@ -26,6 +25,6 @@ export default () => {
           </g>
         </g>
       </svg>
-    </Fragment>
+    </div>
   )
 }
