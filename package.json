@@ -1,10 +1,11 @@
 {
   "name": "webpack-react-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "commit": "npm run changelog && git add . && git cz ",
+    "version": "# 修改 version  \n zx bump.mjs",
+    "commit": "npm run version && npm run changelog && git add . && git cz ",
     "start": "npx webpack-dev-server --mode=development --progress",
     "dev": "npx webpack-dev-server --mode=development --progress",
     "qa": "npx webpack-dev-server --progress --mode=development",
@@ -80,8 +81,10 @@
     "typescript": "^4.7.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.74.0",
+    "zx": "^7.1.1",
     "webpack-cli": "^4.10.0",
     "webpack-merge": "^5.8.0",
+    "prompts": "^2.4.2",
     "webpack-spritesmith": "^1.1.0"
   },
   "dependencies": {

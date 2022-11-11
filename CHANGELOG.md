@@ -1,4 +1,4 @@
-## 1.0.0 (2022-10-30)
+## <small>1.0.1 (2022-11-11)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
@@ -18,6 +18,7 @@
 - ✨ 新增(typescript): 首页 router 纪录 path ([78251c2](https://github.com/2401345934/webpack-react-demo/commit/78251c2))
 - ✨ 新增(typescript): antd router 搭建 ([1c8ef42](https://github.com/2401345934/webpack-react-demo/commit/1c8ef42))
 - ✨ 新增(utils): 新增 utils 工具 ([eb3a647](https://github.com/2401345934/webpack-react-demo/commit/eb3a647))
+- ✨ 新增(webpack): 新增 babel 自动添加 try-catch ([c3bf7b2](https://github.com/2401345934/webpack-react-demo/commit/c3bf7b2))
 - ✨ 新增(webpack): 修改 webpack 配置 ([adb1ab4](https://github.com/2401345934/webpack-react-demo/commit/adb1ab4))
 - ✨ 新增(webpack): 修改 webpack 配置 ([02fa295](https://github.com/2401345934/webpack-react-demo/commit/02fa295))
 - ✨ 新增(webpack): 修改 webpack ([3fa4649](https://github.com/2401345934/webpack-react-demo/commit/3fa4649))
