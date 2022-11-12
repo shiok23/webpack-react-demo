@@ -3,6 +3,7 @@
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
 - ✨ 新增(config): webpack 拆分 ([4ac9224](https://github.com/2401345934/webpack-react-demo/commit/4ac9224))
+- ✨ 新增(custom): 新增 mobx ([d198533](https://github.com/2401345934/webpack-react-demo/commit/d198533))
 - ✨ 新增(hook): 增加常用 hooks ([a9dee90](https://github.com/2401345934/webpack-react-demo/commit/a9dee90))
 - ✨ 新增(package): 西 changelog 修复 ([c9429e3](https://github.com/2401345934/webpack-react-demo/commit/c9429e3))
 - ✨ 新增(package): 新增 ahooks 依赖 ([919fbdf](https://github.com/2401345934/webpack-react-demo/commit/919fbdf))
