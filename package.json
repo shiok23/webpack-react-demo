@@ -1,11 +1,12 @@
 {
   "name": "webpack-react-test",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "version": "# 修改 version  \n zx bump.mjs",
     "commit": "npm run version && npm run changelog && git add . && git cz ",
+    "push": "npm run commit && git push origin HEAD",
     "start": "npx webpack-dev-server --mode=development --progress",
     "dev": "npx webpack-dev-server --mode=development --progress",
     "qa": "npx webpack-dev-server --progress --mode=development",
@@ -73,6 +74,7 @@
     "postcss": "^8.4.17",
     "postcss-loader": "^7.0.1",
     "prettier": "^2.7.1",
+    "prompts": "^2.4.2",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "speed-measure-webpack-plugin": "^1.5.0",
@@ -81,11 +83,10 @@
     "typescript": "^4.7.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.74.0",
-    "zx": "^7.1.1",
     "webpack-cli": "^4.10.0",
     "webpack-merge": "^5.8.0",
-    "prompts": "^2.4.2",
-    "webpack-spritesmith": "^1.1.0"
+    "webpack-spritesmith": "^1.1.0",
+    "zx": "^7.1.1"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -106,6 +107,8 @@
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "lodash": "^4.17.21",
+    "mobx": "^6.6.2",
+    "mobx-react": "^7.5.3",
     "react-dom": "^18.2.0",
     "react-resizable": "^3.0.4",
     "react-router-dom": "^6.4.2",
