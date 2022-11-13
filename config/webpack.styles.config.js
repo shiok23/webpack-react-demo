@@ -32,15 +32,6 @@ module.exports = [
         options: {
           importLoaders: 1
         }
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          postcssOptions: {
-            // 添加 autoprefixer 插件
-            plugins: [require('autoprefixer')]
-          }
-        }
       }
     ]
   }
