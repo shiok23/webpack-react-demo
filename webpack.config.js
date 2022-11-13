@@ -48,18 +48,9 @@ const config = {
     new CleanWebpackPlugin(),
     // htmlWebpackPlugin
     new HtmlWebpackPlugin({
-      templateContent: `
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Webpack App</title>
-  </head>
-  <body>
-    <div id="app" />
-  </body>
-</html>
-    `
+      filename: 'index.html',
+      template: 'index.html',
+      inject: 'head'
     }),
     // fork ts 检查
     new ForkTsCheckerWebpackPlugin(),
