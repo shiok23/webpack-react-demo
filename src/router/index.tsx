@@ -1,11 +1,16 @@
-// @ts-nocheck
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Loading from '@/components/Loading'
 const Home = React.lazy(() => import('@/index'))
 const Todo = React.lazy(() => import('@/pages/Todo'))
 const AntdTable = React.lazy(() => import('@/pages/AntdTable'))
-const initRouter = [
+type RouterType = {
+  path: string
+  label?: string
+  element?: JSX.Element
+  children?: RouterType[]
+}
+const initRouter: RouterType[] = [
   {
     path: '/',
     element: (

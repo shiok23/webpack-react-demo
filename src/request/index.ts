@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import requestInterceptors from './interceptors/request/index'
 import responseInterceptors from './interceptors/response/index'
 import type { RequestType, ResponseData } from './index.type'
 
-const instance = axios.create({
+const instance: AxiosInstance = axios.create({
   baseURL: 'https://some-domain.com/api/',
   timeout: 5000
 })
