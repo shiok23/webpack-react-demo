@@ -10,6 +10,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
   const [currentPath, setCurrentPath] = useState<string>('/')
+  const [themeColor, setThemeColor] = useState<string>('')
 
   // 处理刷新页面重定向 menu key
   useEffect(() => {
@@ -24,36 +25,40 @@ const Component: React.FunctionComponent = (): JSX.Element => {
 
   // 改变主题
   const changeTheme = (event: { target: { value: string } }) => {
-    ConfigProvider.config({
-      theme: {
-        primaryColor: event.target.value
-      }
-    })
+    setThemeColor(event.target.value)
   }
 
   return (
-    <div className="layout-warp">
-      <div className="warp">
-        {/* menu */}
-        <WarpMenu
-          goRouter={goRouter}
-          currentPath={currentPath}
-          collapsed={collapsed}
-        ></WarpMenu>
-        <Layout className="site-layout">
-          {/* headers */}
-          <WarpHeader
-            changeTheme={changeTheme}
-            setCollapsed={setCollapsed}
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: themeColor
+        }
+      }}
+    >
+      <div className="layout-warp">
+        <div className="warp">
+          {/* menu */}
+          <WarpMenu
+            goRouter={goRouter}
+            currentPath={currentPath}
             collapsed={collapsed}
-          ></WarpHeader>
-          {/* content */}
-          <WarpComponent>
-            <Outlet />
-          </WarpComponent>
-        </Layout>
+          ></WarpMenu>
+          <Layout className="site-layout">
+            {/* headers */}
+            <WarpHeader
+              changeTheme={changeTheme}
+              setCollapsed={setCollapsed}
+              collapsed={collapsed}
+            ></WarpHeader>
+            {/* content */}
+            <WarpComponent>
+              <Outlet />
+            </WarpComponent>
+          </Layout>
+        </div>
       </div>
-    </div>
+    </ConfigProvider>
   )
 }
 

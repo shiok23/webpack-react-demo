@@ -1,4 +1,3 @@
-import { PageHeader } from 'antd'
 import { Fragment } from 'react'
 
 type PropsType = {
@@ -10,12 +9,9 @@ export default (props: PropsType) => {
   const { children, ...rest } = props
   return (
     <Fragment>
-      <PageHeader
-        className="warp-component site-page-header-responsive"
-        {...rest}
-      >
+      <div className="warp-component site-page-header-responsive" {...rest}>
         {children}
-      </PageHeader>
+      </div>
     </Fragment>
   )
 }

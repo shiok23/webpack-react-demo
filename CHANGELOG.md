@@ -1,9 +1,10 @@
-## <small>1.0.6 (2022-11-19)</small>
+## <small>1.0.7 (2022-11-22)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
 - ✨ 新增(config): webpack 拆分 ([4ac9224](https://github.com/2401345934/webpack-react-demo/commit/4ac9224))
 - ✨ 新增(custom): 请求封装 \&\& utils 封装 ([772c8d3](https://github.com/2401345934/webpack-react-demo/commit/772c8d3))
+- ✨ 新增(custom): 完善目录结构 ([8ad2820](https://github.com/2401345934/webpack-react-demo/commit/8ad2820))
 - ✨ 新增(custom): 新增 mobx ([d198533](https://github.com/2401345934/webpack-react-demo/commit/d198533))
 - ✨ 新增(custom): 修改 webpack html plugins ([bde2831](https://github.com/2401345934/webpack-react-demo/commit/bde2831))
 - ✨ 新增(custom): mobx ([4a5a6d2](https://github.com/2401345934/webpack-react-demo/commit/4a5a6d2))
