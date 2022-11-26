@@ -11,6 +11,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
   const [collapsed, setCollapsed] = useState(false)
   const [currentPath, setCurrentPath] = useState<string>('/')
   const [themeColor, setThemeColor] = useState<string>('')
+  const [selectColor, setSelectColor] = useState<string>('')
 
   // 处理刷新页面重定向 menu key
   useEffect(() => {
@@ -23,9 +24,15 @@ const Component: React.FunctionComponent = (): JSX.Element => {
     navigate(e.key)
   }
 
-  // 改变主题
+  // 选择的颜色
   const changeTheme = (event: { target: { value: string } }) => {
-    setThemeColor(event.target.value)
+    setSelectColor(event.target.value)
+  }
+
+  // 改变主题
+  const updateTheme = () => {
+    if (selectColor === themeColor) return
+    setThemeColor(selectColor)
   }
 
   return (
@@ -48,6 +55,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
             {/* headers */}
             <WarpHeader
               changeTheme={changeTheme}
+              updateTheme={updateTheme}
               setCollapsed={setCollapsed}
               collapsed={collapsed}
             ></WarpHeader>

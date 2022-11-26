@@ -1,4 +1,4 @@
-## 1.1.0 (2022-11-25)
+## <small>1.1.1 (2022-11-26)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
@@ -10,6 +10,7 @@
 - ✨ 新增(custom): 修改 webpack html plugins ([bde2831](https://github.com/2401345934/webpack-react-demo/commit/bde2831))
 - ✨ 新增(custom): mobx ([4a5a6d2](https://github.com/2401345934/webpack-react-demo/commit/4a5a6d2))
 - ✨ 新增(hook): 增加常用 hooks ([a9dee90](https://github.com/2401345934/webpack-react-demo/commit/a9dee90))
+- ✨ 新增(package): 更新 webpack yml ([d67972f](https://github.com/2401345934/webpack-react-demo/commit/d67972f))
 - ✨ 新增(package): 西 changelog 修复 ([c9429e3](https://github.com/2401345934/webpack-react-demo/commit/c9429e3))
 - ✨ 新增(package): 新增 ahooks 依赖 ([919fbdf](https://github.com/2401345934/webpack-react-demo/commit/919fbdf))
 - ✨ 新增(package): 修改 build 命令 ([dcc4b90](https://github.com/2401345934/webpack-react-demo/commit/dcc4b90))
@@ -37,6 +38,7 @@
 - 💄 格式(pages): 新增 style 文件 增加初始化 less 和 常用 mixins ([224ea3b](https://github.com/2401345934/webpack-react-demo/commit/224ea3b))
 - 💄 格式(pages): delete use lesscode ([625ec4a](https://github.com/2401345934/webpack-react-demo/commit/625ec4a))
 - 🔧 工具(webpack): 脚手架增加 path alias 配置 ([06964f0](https://github.com/2401345934/webpack-react-demo/commit/06964f0))
+- 更新 usesv3 ([da7f8df](https://github.com/2401345934/webpack-react-demo/commit/da7f8df))
 - 工程化 ([05e0f24](https://github.com/2401345934/webpack-react-demo/commit/05e0f24))
 - 工程化 ([0925441](https://github.com/2401345934/webpack-react-demo/commit/0925441))
 - 实现 ts 版本 todolist ([ef62ffb](https://github.com/2401345934/webpack-react-demo/commit/ef62ffb))
