@@ -1,4 +1,4 @@
-## <small>1.1.2 (2022-11-26)</small>
+## <small>1.1.3 (2022-11-26)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
@@ -36,6 +36,7 @@
 - ✨ 新增(webpack): webpack 配置 ([e8f8b3e](https://github.com/2401345934/webpack-react-demo/commit/e8f8b3e))
 - ✨ 新增(webpack): wepback 配置修改 ([0e5aebb](https://github.com/2401345934/webpack-react-demo/commit/0e5aebb))
 - 🐛 修复(webpack): 修复重复声明 pstcss ([599c87f](https://github.com/2401345934/webpack-react-demo/commit/599c87f))
+- 💄 格式(custom): lint style ([d1811e3](https://github.com/2401345934/webpack-react-demo/commit/d1811e3))
 - 💄 格式(pages): 新增 style 文件 增加初始化 less 和 常用 mixins ([224ea3b](https://github.com/2401345934/webpack-react-demo/commit/224ea3b))
 - 💄 格式(pages): delete use lesscode ([625ec4a](https://github.com/2401345934/webpack-react-demo/commit/625ec4a))
 - 🔧 工具(webpack): 脚手架增加 path alias 配置 ([06964f0](https://github.com/2401345934/webpack-react-demo/commit/06964f0))

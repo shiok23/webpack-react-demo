@@ -1,12 +1,16 @@
 import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import Loading from '@/components/Loading'
-const Home = React.lazy(() => import('@/index'))
+const BaseLayout = React.lazy(() => import('@/index'))
+const Wecome = React.lazy(() => import('@/pages/Wecome'))
+const NotPage = React.lazy(() => import('@/pages/404'))
 const Todo = React.lazy(() => import('@/pages/Todo'))
 const AntdTable = React.lazy(() => import('@/pages/AntdTable'))
-type RouterType = {
-  path: string
+
+export type RouterType = {
+  path?: string
   label?: string
+  redirect?: string
   element?: JSX.Element
   children?: RouterType[]
 }
@@ -15,10 +19,19 @@ const initRouter: RouterType[] = [
     path: '/',
     element: (
       <React.Suspense fallback={<Loading />}>
-        <Home />
+        <BaseLayout />
       </React.Suspense>
     ),
     children: [
+      {
+        path: 'wecome',
+        label: '首页',
+        element: (
+          <React.Suspense fallback={<Loading />}>
+            <Wecome />
+          </React.Suspense>
+        )
+      },
       {
         path: 'todo',
         label: '代办事项',
@@ -41,10 +54,11 @@ const initRouter: RouterType[] = [
   },
   {
     path: '*',
-    element: <Home />
+    element: <NotPage />
   }
 ]
-const router = createBrowserRouter(initRouter)
+
+const router = createHashRouter(initRouter)
 
 const routerList: any = initRouter[0].children?.map(item => {
   return {
@@ -52,4 +66,18 @@ const routerList: any = initRouter[0].children?.map(item => {
     key: item.path
   }
 })
-export { router, routerList }
+
+const initRoute = [
+  {
+    key: 'wecome',
+    label: '首页',
+    closable: false,
+    children: (
+      <React.Suspense fallback={<Loading />}>
+        <Wecome />
+      </React.Suspense>
+    )
+  }
+]
+
+export { router, routerList, initRoute }

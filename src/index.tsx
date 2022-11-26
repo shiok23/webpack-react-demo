@@ -12,7 +12,9 @@ const Component: React.FunctionComponent = (): JSX.Element => {
   const [currentPath, setCurrentPath] = useState<string>('/')
   const [themeColor, setThemeColor] = useState<string>('')
   const [selectColor, setSelectColor] = useState<string>('')
-
+  useEffect(() => {
+    setCurrentPath(location.pathname.slice(1))
+  }, [location])
   // 处理刷新页面重定向 menu key
   useEffect(() => {
     setCurrentPath(location.pathname.slice(1, location.pathname.length))
@@ -60,9 +62,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
               collapsed={collapsed}
             ></WarpHeader>
             {/* content */}
-            <WarpComponent>
-              <Outlet />
-            </WarpComponent>
+            <WarpComponent></WarpComponent>
           </Layout>
         </div>
       </div>
