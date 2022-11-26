@@ -1,4 +1,4 @@
-## <small>1.1.1 (2022-11-26)</small>
+## <small>1.1.2 (2022-11-26)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
@@ -31,6 +31,7 @@
 - ✨ 新增(webpack): 修改 webpack 配置 ([02fa295](https://github.com/2401345934/webpack-react-demo/commit/02fa295))
 - ✨ 新增(webpack): 修改 webpack ([3fa4649](https://github.com/2401345934/webpack-react-demo/commit/3fa4649))
 - ✨ 新增(webpack): 修改 webpack 增加多线程压缩 ([efab0eb](https://github.com/2401345934/webpack-react-demo/commit/efab0eb))
+- ✨ 新增(webpack): 增加 css module 方案 引入 css-module ([3c92518](https://github.com/2401345934/webpack-react-demo/commit/3c92518))
 - ✨ 新增(webpack): publichpath ([8aba06c](https://github.com/2401345934/webpack-react-demo/commit/8aba06c))
 - ✨ 新增(webpack): webpack 配置 ([e8f8b3e](https://github.com/2401345934/webpack-react-demo/commit/e8f8b3e))
 - ✨ 新增(webpack): wepback 配置修改 ([0e5aebb](https://github.com/2401345934/webpack-react-demo/commit/0e5aebb))
