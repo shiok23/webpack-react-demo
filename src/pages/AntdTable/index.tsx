@@ -1,6 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import ResizeableTable from '@/components/Resizeable'
+import PageWarp from '@/components/BusinessComponent/PageWarp'
 
 const data: any = [
   {
@@ -51,10 +52,10 @@ const columns: any = [
 
 const Component: React.FC = (): JSX.Element => {
   return (
-    <div>
+    <PageWarp>
       <h1> Antd Table</h1>
       <ResizeableTable columns={columns} dataSource={data} />
-    </div>
+    </PageWarp>
   )
 }
 

@@ -3,6 +3,7 @@ import { Tabs } from 'antd'
 import React from 'react'
 import { routerList, RouterType, initRoute } from '@/router'
 import { useLocation, useNavigate } from 'react-router-dom'
+
 type PropsType = {
   children?: React.ReactNode
   [key: string]: any

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Title from './components/title'
 import List from './components/List'
 import InputTodo from './components/input'
+import PageWarp from '@/components/BusinessComponent/PageWarp'
 
 export type listType = {
   title: string
@@ -32,15 +33,17 @@ const Component: React.FC = (): JSX.Element => {
     setList([...list])
   }
   return (
-    <div className="hello">
-      <Title></Title>
-      <InputTodo addCallback={handleAdd}></InputTodo>
-      <List
-        checkCallback={handleCheck}
-        deleteCallback={handleDelete}
-        list={list}
-      ></List>
-    </div>
+    <PageWarp>
+      <div className="hello">
+        <Title></Title>
+        <InputTodo addCallback={handleAdd}></InputTodo>
+        <List
+          checkCallback={handleCheck}
+          deleteCallback={handleDelete}
+          list={list}
+        ></List>
+      </div>
+    </PageWarp>
   )
 }
 

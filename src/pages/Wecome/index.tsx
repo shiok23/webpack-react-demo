@@ -1,7 +1,12 @@
+import PageWarp from '@/components/BusinessComponent/PageWarp'
 import React from 'react'
 
 const Component: React.FC = (): JSX.Element => {
-  return <div className="hello">wecome</div>
+  return (
+    <PageWarp>
+      <div className="hello">wecome</div>
+    </PageWarp>
+  )
 }
 
 export default Component

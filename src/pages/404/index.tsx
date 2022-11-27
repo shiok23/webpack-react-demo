@@ -1,8 +1,9 @@
 // @ts-nocheck
+import PageWarp from '@/components/BusinessComponent/PageWarp'
 import React from 'react'
 
 const Component: React.FC = (): JSX.Element => {
-  return <div>404</div>
+  return <PageWarp>404</PageWarp>
 }
 
 export default Component

@@ -1,4 +1,4 @@
-## <small>1.1.4 (2022-11-27)</small>
+## <small>1.1.5 (2022-11-27)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
@@ -36,6 +36,7 @@
 - ✨ 新增(webpack): publichpath ([8aba06c](https://github.com/2401345934/webpack-react-demo/commit/8aba06c))
 - ✨ 新增(webpack): webpack 配置 ([e8f8b3e](https://github.com/2401345934/webpack-react-demo/commit/e8f8b3e))
 - ✨ 新增(webpack): wepback 配置修改 ([0e5aebb](https://github.com/2401345934/webpack-react-demo/commit/0e5aebb))
+- 🐛 修复(pages): 修复启动项目没有自动定位到 第一个菜单 ([46fc166](https://github.com/2401345934/webpack-react-demo/commit/46fc166))
 - 🐛 修复(webpack): 修复重复声明 pstcss ([599c87f](https://github.com/2401345934/webpack-react-demo/commit/599c87f))
 - 💄 格式(custom): lint style ([d1811e3](https://github.com/2401345934/webpack-react-demo/commit/d1811e3))
 - 💄 格式(pages): 新增 style 文件 增加初始化 less 和 常用 mixins ([224ea3b](https://github.com/2401345934/webpack-react-demo/commit/224ea3b))
