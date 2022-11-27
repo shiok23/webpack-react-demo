@@ -19,6 +19,7 @@ export default (props: PropsType) => {
     const routerItem = routerList.find(
       (route: RouterType) => `/${route.path}` === key
     )
+    if (!routerItem) return
     setActiveKey(routerItem.key)
     if (items.find(route => `/${route.key}` === key)) return
     setItems([

@@ -1,4 +1,4 @@
-## <small>1.1.3 (2022-11-26)</small>
+## <small>1.1.4 (2022-11-27)</small>
 
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
@@ -18,6 +18,7 @@
 - ✨ 新增(pages): 组件拆分细化 ([ad6a060](https://github.com/2401345934/webpack-react-demo/commit/ad6a060))
 - ✨ 新增(request): 新增 request 请求 ([27f0b42](https://github.com/2401345934/webpack-react-demo/commit/27f0b42))
 - ✨ 新增(router): 改用 history 路由 并修改 webpack 配置 ([5b853bb](https://github.com/2401345934/webpack-react-demo/commit/5b853bb))
+- ✨ 新增(router): 新增 多页签第一版本 ([ec5193a](https://github.com/2401345934/webpack-react-demo/commit/ec5193a))
 - ✨ 新增(static): 新增 static 文件 ([addae41](https://github.com/2401345934/webpack-react-demo/commit/addae41))
 - ✨ 新增(tsconfig): 新增 alias ([e112f53](https://github.com/2401345934/webpack-react-demo/commit/e112f53))
 - ✨ 新增(tsconfig): 修改 tsconfig ([7b2829a](https://github.com/2401345934/webpack-react-demo/commit/7b2829a))
