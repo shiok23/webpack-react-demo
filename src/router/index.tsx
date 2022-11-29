@@ -66,8 +66,13 @@ const routerList: any = initRouter[0].children?.map(item => {
     key: item.path
   }
 })
-
-const initRoute = [
+export type InitRouteType = {
+  key: string
+  label: string
+  closable: boolean
+  children: JSX.Element
+}
+const initRoute: InitRouteType[] = [
   {
     key: 'wecome',
     label: '首页',

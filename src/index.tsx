@@ -1,5 +1,11 @@
 import { ConfigProvider, Layout } from 'antd'
-import React, { useEffect, useState } from 'react'
+import React, {
+  MutableRefObject,
+  RefObject,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import WarpComponent from '@/components/Layout/WarpComponent'
 import WarpMenu from '@/components/Layout/WarpMenu'
@@ -8,12 +14,18 @@ import WarpHeader from '@/components/Layout/WarpHeader'
 const Component: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
-  const [collapsed, setCollapsed] = useState(false)
+  const ref = useRef<{
+    routerChange: () => void
+  }>(null)
+  const [collapsed, setCollapsed] = useState<boolean>(false)
   const [currentPath, setCurrentPath] = useState<string>('/')
   const [themeColor, setThemeColor] = useState<string>('')
   const [selectColor, setSelectColor] = useState<string>('')
   useEffect(() => {
     setCurrentPath(location.pathname.slice(1))
+    if (ref?.current) {
+      ref?.current?.routerChange()
+    }
   }, [location])
   // 处理刷新页面重定向 menu key
   useEffect(() => {
@@ -64,7 +76,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
               collapsed={collapsed}
             ></WarpHeader>
             {/* content */}
-            <WarpComponent></WarpComponent>
+            <WarpComponent ref={ref}></WarpComponent>
           </Layout>
         </div>
       </div>

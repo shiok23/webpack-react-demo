@@ -1,7 +1,7 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, forwardRef, useState, useImperativeHandle } from 'react'
 import { Tabs } from 'antd'
 import React from 'react'
-import { routerList, RouterType, initRoute } from '@/router'
+import { routerList, RouterType, initRoute, InitRouteType } from '@/router'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 type PropsType = {
@@ -9,13 +9,19 @@ type PropsType = {
   [key: string]: any
 }
 
-export default (props: PropsType) => {
+export default forwardRef((props: PropsType, ref) => {
   const { children, ...rest } = props
   const location = useLocation()
   const navigate = useNavigate()
-  const [activeKey, setActiveKey] = useState(initRoute[0].key)
-  const [items, setItems] = useState(initRoute)
-  useEffect(() => {
+  const [activeKey, setActiveKey] = useState<string>(initRoute[0].key)
+  const [items, setItems] = useState<InitRouteType[]>(initRoute)
+
+  // 对外暴露 routerChange 方法
+  useImperativeHandle(ref, () => ({
+    routerChange
+  }))
+
+  const routerChange = () => {
     const key = location.pathname
     const routerItem = routerList.find(
       (route: RouterType) => `/${route.path}` === key
@@ -32,13 +38,15 @@ export default (props: PropsType) => {
         children: routerItem.element
       }
     ])
-  }, [location])
+  }
 
+  // 标签页切换
   const onChange = (newActiveKey: string) => {
     setActiveKey(newActiveKey)
     navigate(newActiveKey)
   }
 
+  // 删除页签
   const onEdit = (e: React.MouseEvent | React.KeyboardEvent | string) => {
     const newItems = items.filter(item => item.key !== e)
     const lastkey = newItems[newItems.length - 1].key
@@ -61,4 +69,4 @@ export default (props: PropsType) => {
       </div>
     </Fragment>
   )
-}
+})
