@@ -1,4 +1,4 @@
-## <small>1.1.7 (2022-12-01)</small>
+## <small>1.1.8 (2022-12-01)</small>
 
 - ✨ 新增(components): 新增 组件 warp page page 和 businesscomponen ([7c75119](https://github.com/2401345934/webpack-react-demo/commit/7c75119))
 - ✨ 新增(components): layout 完善类型编程 ([26f67b6](https://github.com/2401345934/webpack-react-demo/commit/26f67b6))
@@ -7,6 +7,7 @@
 - ✨ 新增(config): webpack 拆分 ([4ac9224](https://github.com/2401345934/webpack-react-demo/commit/4ac9224))
 - ✨ 新增(custom): 请求封装 \&\& utils 封装 ([772c8d3](https://github.com/2401345934/webpack-react-demo/commit/772c8d3))
 - ✨ 新增(custom): 升级 antd v5 删除 mobx 后续考虑 redux ([c582056](https://github.com/2401345934/webpack-react-demo/commit/c582056))
+- ✨ 新增(custom): 完善多页签 多级菜单展示 ([1ff5e63](https://github.com/2401345934/webpack-react-demo/commit/1ff5e63))
 - ✨ 新增(custom): 完善目录结构 ([8ad2820](https://github.com/2401345934/webpack-react-demo/commit/8ad2820))
 - ✨ 新增(custom): 新增 mobx ([d198533](https://github.com/2401345934/webpack-react-demo/commit/d198533))
 - ✨ 新增(custom): 修改 webpack html plugins ([bde2831](https://github.com/2401345934/webpack-react-demo/commit/bde2831))

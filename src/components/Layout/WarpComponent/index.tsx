@@ -3,6 +3,9 @@ import { Tabs } from 'antd'
 import React from 'react'
 import { deepFlatRouter, RouterType, initRoute, InitRouteType } from '@/router'
 import { useLocation, useNavigate } from 'react-router-dom'
+import styles from './styles.module.less'
+import { FullscreenExitOutlined, FullscreenOutlined } from '@ant-design/icons'
+import utils from '@/utils'
 
 type PropsType = {
   children?: React.ReactNode
@@ -15,6 +18,7 @@ export default forwardRef((props: PropsType, ref) => {
   const navigate = useNavigate()
   const [activeKey, setActiveKey] = useState<string>(initRoute[0].key)
   const [items, setItems] = useState<InitRouteType[]>(initRoute)
+  const [fullscreenFlag, setFullscreenFlag] = useState<boolean>(false)
 
   // 对外暴露 routerChange 方法
   useImperativeHandle(ref, () => ({
@@ -55,9 +59,17 @@ export default forwardRef((props: PropsType, ref) => {
     navigate(lastkey)
   }
 
+  // 切换全屏
+  const toggleFullScreen = () => {
+    utils.toggleFullscreen({
+      fullscreenFlag,
+      className: styles.warpComponent
+    })
+    setFullscreenFlag(!fullscreenFlag)
+  }
   return (
     <Fragment>
-      <div className="warp-component site-page-header-responsive" {...rest}>
+      <div className={styles.warpComponent} {...rest}>
         <Tabs
           type="editable-card"
           hideAdd
@@ -66,6 +78,14 @@ export default forwardRef((props: PropsType, ref) => {
           activeKey={activeKey}
           items={items}
         />
+
+        {/* 全屏功能 */}
+        <div
+          className={styles.fullscreenOutlined}
+          onClick={() => toggleFullScreen()}
+        >
+          {fullscreenFlag ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
+        </div>
       </div>
     </Fragment>
   )
