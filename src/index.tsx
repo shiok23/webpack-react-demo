@@ -1,12 +1,6 @@
 import { ConfigProvider, Layout } from 'antd'
-import React, {
-  MutableRefObject,
-  RefObject,
-  useEffect,
-  useRef,
-  useState
-} from 'react'
-import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import WarpComponent from '@/components/Layout/WarpComponent'
 import WarpMenu from '@/components/Layout/WarpMenu'
 import WarpHeader from '@/components/Layout/WarpHeader'
@@ -17,10 +11,17 @@ const Component: React.FunctionComponent = (): JSX.Element => {
   const ref = useRef<{
     routerChange: () => void
   }>(null)
+  const key: string =
+    location.pathname.slice(1, location.pathname.length) || 'wecome'
+  const keyList: string[] = key.split('/')
+  const assembleKey: string = keyList[keyList.length - 1]
   const [collapsed, setCollapsed] = useState<boolean>(false)
-  const [currentPath, setCurrentPath] = useState<string>('/')
+  const [currentPath, setCurrentPath] = useState<string>(assembleKey)
   const [themeColor, setThemeColor] = useState<string>('')
   const [selectColor, setSelectColor] = useState<string>('')
+  const [defaultOpenKeys, setDefaultOpenKeys] = useState<string[]>(
+    keyList.filter((key: string) => key !== assembleKey)
+  )
   useEffect(() => {
     setCurrentPath(location.pathname.slice(1))
     if (ref?.current) {
@@ -29,13 +30,11 @@ const Component: React.FunctionComponent = (): JSX.Element => {
   }, [location])
   // 处理刷新页面重定向 menu key
   useEffect(() => {
-    const key = location.pathname.slice(1, location.pathname.length) || 'wecome'
-    setCurrentPath(key)
     navigate(key)
   }, [])
 
   // 路由跳转
-  const goRouter = (e: { key: string }): void => {
+  const goRouter = (e: { key: string; keyPath: string[] }): void => {
     setCurrentPath(e.key)
     navigate(e.key)
   }
@@ -64,6 +63,7 @@ const Component: React.FunctionComponent = (): JSX.Element => {
           {/* menu */}
           <WarpMenu
             goRouter={goRouter}
+            defaultOpenKeys={defaultOpenKeys}
             currentPath={currentPath}
             collapsed={collapsed}
           ></WarpMenu>

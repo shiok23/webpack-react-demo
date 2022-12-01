@@ -6,10 +6,11 @@ import { routerList } from '@/router'
 type PropsType = {
   collapsed: boolean
   currentPath: string
-  goRouter: (e: { key: string }) => void
+  defaultOpenKeys: string[]
+  goRouter: (e: { key: string; keyPath: string[] }) => void
 }
 export default (props: PropsType) => {
-  const { currentPath, goRouter, collapsed } = props
+  const { currentPath, goRouter, collapsed, defaultOpenKeys } = props
   return (
     <Fragment>
       <Sider
@@ -23,6 +24,7 @@ export default (props: PropsType) => {
           theme="light"
           onClick={goRouter}
           mode="inline"
+          defaultOpenKeys={defaultOpenKeys}
           selectedKeys={[currentPath]}
           items={routerList}
         />

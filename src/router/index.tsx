@@ -1,16 +1,20 @@
-import React from 'react'
+import { Suspense, lazy } from 'react'
 import { createHashRouter } from 'react-router-dom'
 import Loading from '@/components/Loading'
-const BaseLayout = React.lazy(() => import('@/index'))
-const Wecome = React.lazy(() => import('@/pages/Wecome'))
-const NotPage = React.lazy(() => import('@/pages/404'))
-const Todo = React.lazy(() => import('@/pages/Todo'))
-const AntdTable = React.lazy(() => import('@/pages/AntdTable'))
+import IncludesSubmenusWarp from '@/components/IncludesSubmenusWarp'
+import { generateRouterItemKey, flattenRouter } from './helper'
+const BaseLayout = lazy(() => import('@/index'))
+const Wecome = lazy(() => import('@/pages/Wecome'))
+const NotPage = lazy(() => import('@/pages/404'))
+const Todo = lazy(() => import('@/pages/Todo'))
+const AntdTable = lazy(() => import('@/pages/AntdTable'))
 
 export type RouterType = {
   path?: string
   label?: string
   redirect?: string
+  key?: string
+  menuLabel?: string
   element?: JSX.Element
   children?: RouterType[]
 }
@@ -18,36 +22,61 @@ const initRouter: RouterType[] = [
   {
     path: '/',
     element: (
-      <React.Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <BaseLayout />
-      </React.Suspense>
+      </Suspense>
     ),
     children: [
       {
         path: 'wecome',
         label: '首页',
         element: (
-          <React.Suspense fallback={<Loading />}>
+          <Suspense fallback={<Loading />}>
             <Wecome />
-          </React.Suspense>
+          </Suspense>
         )
       },
       {
         path: 'todo',
         label: '代办事项',
-        element: (
-          <React.Suspense fallback={<Loading />}>
-            <Todo />
-          </React.Suspense>
-        )
+        element: <IncludesSubmenusWarp />,
+        children: [
+          {
+            path: 'wecome1',
+            label: '首页',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Wecome />
+              </Suspense>
+            )
+          },
+          {
+            path: 'wecome2',
+            label: '代办事项',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Todo />
+              </Suspense>
+            )
+          },
+          {
+            path: 'wecome3',
+            label: '表格',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <AntdTable />
+              </Suspense>
+            )
+          }
+        ]
       },
       {
         path: 'antd-table',
         label: '表格',
         element: (
-          <React.Suspense fallback={<Loading />}>
+          <Suspense fallback={<Loading />}>
             <AntdTable />
-          </React.Suspense>
+          </Suspense>
         )
       }
     ]
@@ -59,13 +88,9 @@ const initRouter: RouterType[] = [
 ]
 
 const router = createHashRouter(initRouter)
+const routerList: any[] = generateRouterItemKey(initRouter[0].children || [])
+const deepFlatRouter: any[] = flattenRouter(routerList)
 
-const routerList: any = initRouter[0].children?.map(item => {
-  return {
-    ...item,
-    key: item.path
-  }
-})
 export type InitRouteType = {
   key: string
   label: string
@@ -78,11 +103,11 @@ const initRoute: InitRouteType[] = [
     label: '首页',
     closable: false,
     children: (
-      <React.Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <Wecome />
-      </React.Suspense>
+      </Suspense>
     )
   }
 ]
 
-export { router, routerList, initRoute }
+export { router, routerList, initRoute, deepFlatRouter }

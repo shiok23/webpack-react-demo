@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = [
   {
-    test: [/\.jsx$/, /\.tsx$/],
+    test: [/\.jsx$/, /\.tsx$/, /\.ts$/],
     exclude: /node_modules/,
     use: [
       'thread-loader',

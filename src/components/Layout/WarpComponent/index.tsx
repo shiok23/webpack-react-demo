@@ -1,7 +1,7 @@
 import { Fragment, forwardRef, useState, useImperativeHandle } from 'react'
 import { Tabs } from 'antd'
 import React from 'react'
-import { routerList, RouterType, initRoute, InitRouteType } from '@/router'
+import { deepFlatRouter, RouterType, initRoute, InitRouteType } from '@/router'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 type PropsType = {
@@ -23,7 +23,7 @@ export default forwardRef((props: PropsType, ref) => {
 
   const routerChange = () => {
     const key = location.pathname
-    const routerItem = routerList.find(
+    const routerItem = deepFlatRouter.find(
       (route: RouterType) => `/${route.path}` === key
     )
     if (!routerItem) return
@@ -33,7 +33,7 @@ export default forwardRef((props: PropsType, ref) => {
       ...items,
       {
         key: routerItem.key,
-        label: routerItem.label,
+        label: routerItem.menuLabel || routerItem.label,
         closable: true,
         children: routerItem.element
       }

@@ -1,6 +1,7 @@
-## <small>1.1.6 (2022-11-29)</small>
+## <small>1.1.7 (2022-12-01)</small>
 
 - ✨ 新增(components): 新增 组件 warp page page 和 businesscomponen ([7c75119](https://github.com/2401345934/webpack-react-demo/commit/7c75119))
+- ✨ 新增(components): layout 完善类型编程 ([26f67b6](https://github.com/2401345934/webpack-react-demo/commit/26f67b6))
 - ✨ 新增(components): loading 组件完善 ([e68fab5](https://github.com/2401345934/webpack-react-demo/commit/e68fab5))
 - ✨ 新增(components): loading styles 修改 ([2a6e839](https://github.com/2401345934/webpack-react-demo/commit/2a6e839))
 - ✨ 新增(config): webpack 拆分 ([4ac9224](https://github.com/2401345934/webpack-react-demo/commit/4ac9224))
